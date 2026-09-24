@@ -106,5 +106,123 @@ footer{padding:28px 6%;background:#021b28;color:#9bbac4;text-align:center;font-s
 © 2026 Your Trip to Marsa Alam With Us · Marsa Alam, Red Sea, Egypt<br>
 Photography by Galal Photography
 </footer>
+  <script>
+const translations = {
+  English: {
+    trips: "Trips",
+    about: "About",
+    contact: "Contact",
+    explore: "Explore Trips",
+    ask: "Ask About a Trip",
+    choose: "Choose Your Experience",
+    works: "How It Works",
+    moments: "Moments You Won't Forget",
+    ready: "Ready to Explore Marsa Alam?",
+    whatsapp: "Book on WhatsApp"
+  },
+
+  Italiano: {
+    trips: "Escursioni",
+    about: "Chi siamo",
+    contact: "Contatti",
+    explore: "Scopri le escursioni",
+    ask: "Chiedi informazioni",
+    choose: "Scegli la tua esperienza",
+    works: "Come funziona",
+    moments: "Momenti che non dimenticherai",
+    ready: "Pronto a scoprire Marsa Alam?",
+    whatsapp: "Prenota su WhatsApp"
+  },
+
+  Polski: {
+    trips: "Wycieczki",
+    about: "O nas",
+    contact: "Kontakt",
+    explore: "Zobacz wycieczki",
+    ask: "Zapytaj o wycieczkę",
+    choose: "Wybierz swoje doświadczenie",
+    works: "Jak to działa",
+    moments: "Chwile, których nie zapomnisz",
+    ready: "Gotowy odkryć Marsa Alam?",
+    whatsapp: "Rezerwuj przez WhatsApp"
+  },
+
+  Čeština: {
+    trips: "Výlety",
+    about: "O nás",
+    contact: "Kontakt",
+    explore: "Prozkoumat výlety",
+    ask: "Zeptat se na výlet",
+    choose: "Vyberte si svůj zážitek",
+    works: "Jak to funguje",
+    moments: "Okamžiky, na které nezapomenete",
+    ready: "Jste připraveni objevit Marsa Alam?",
+    whatsapp: "Rezervovat přes WhatsApp"
+  },
+
+  Deutsch: {
+    trips: "Ausflüge",
+    about: "Über uns",
+    contact: "Kontakt",
+    explore: "Ausflüge entdecken",
+    ask: "Nach einem Ausflug fragen",
+    choose: "Wähle dein Erlebnis",
+    works: "So funktioniert es",
+    moments: "Momente, die du nie vergisst",
+    ready: "Bereit, Marsa Alam zu entdecken?",
+    whatsapp: "Über WhatsApp buchen"
+  },
+
+  Français: {
+    trips: "Excursions",
+    about: "À propos",
+    contact: "Contact",
+    explore: "Découvrir les excursions",
+    ask: "Demander des informations",
+    choose: "Choisissez votre expérience",
+    works: "Comment ça marche",
+    moments: "Des moments inoubliables",
+    ready: "Prêt à découvrir Marsa Alam ?",
+    whatsapp: "Réserver sur WhatsApp"
+  },
+
+  Русский: {
+    trips: "Экскурсии",
+    about: "О нас",
+    contact: "Контакты",
+    explore: "Смотреть экскурсии",
+    ask: "Узнать об экскурсии",
+    choose: "Выберите свой опыт",
+    works: "Как это работает",
+    moments: "Моменты, которые вы не забудете",
+    ready: "Готовы открыть для себя Марса-Алам?",
+    whatsapp: "Забронировать через WhatsApp"
+  }
+};
+
+document.getElementById("languageSelect").addEventListener("change", function () {
+  const lang = this.value;
+  const t = translations[lang];
+
+  const links = document.querySelectorAll(".navlinks a");
+
+  links[0].textContent = t.trips;
+  links[1].textContent = t.about;
+  links[2].textContent = t.contact;
+
+  document.querySelector('a[href="#trips"].btn').textContent = t.explore;
+  document.querySelector('a[href="#contact"].btn.alt').textContent = t.ask;
+
+  document.querySelector("#trips h2").textContent = t.choose;
+
+  const headings = document.querySelectorAll("section h2");
+  headings[2].textContent = t.works;
+  headings[3].textContent = t.moments;
+
+  document.querySelector("#contact h2").textContent = t.ready;
+
+  document.querySelector('a[href^="https://wa.me"]').textContent = t.whatsapp;
+});
+</script>
 </body>
 </html>
